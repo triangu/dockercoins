@@ -1,3 +1,6 @@
-FROM 636421644744.dkr.ecr.us-east-2.amazonaws.com/dockercoins/node
+FROM node:4
+RUN npm install express
+RUN npm install redis
 COPY files/ /files/
 COPY webui.js /
+CMD ["node", "webui.js"]
